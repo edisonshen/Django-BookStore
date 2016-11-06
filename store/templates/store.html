@@ -1,9 +1,10 @@
  <html>
  <head>
  	<meta charset="UTF-8">
- 	<title></title>
+ 	<title>{% block title %}Welcome to Mystery Books! {% endblock %}</title>
  </head>
  <body>
+ {% block content %}
  	{% if request.user.is_authenticated %}
  	<h4>
  		Welcome {% if request.user.first_name %}
@@ -13,9 +14,10 @@
  		{% endif %} <a href="{% url 'auth_logout' %}">Log Out</a>
  	</h4>
 	{% else %}
-	<h4>WelCome, mysterious person! would you like to <a href="{% url 'auth_login' %}">Log In</a></h4>
+	<h4>WelCome, mysterious person! would you like to <a href="{% url 'auth_login' %}">Log In?</a></h4>
 	{% endif %}
-	welcome to the mystery book store! there are {{count}} books in stock
+	welcome to the mystery book store! there are {{ count }} books in stock
 	User Location: {{request.session.location}}
+{% endblock %}
  </body>
  </html>
