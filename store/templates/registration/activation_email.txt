@@ -1,0 +1,7 @@
+Greetings,
+You just signed up for an acoount at {{site.name}}. Please click the linke below to actiavtice its link :
+http://{{site.domain}}{% url 'registration_activate' activation_key %}
+
+this link is validate for {{expiration_days}}. If it wasn't you taht signed up for this account, don't panic! It's safe to ignore this email. 
+
+
